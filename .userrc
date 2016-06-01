@@ -1,0 +1,50 @@
+# simple two line prompt
+export PS1="\n[\w]\n\u@\h $ "
+
+# export swmod stuff...
+export PATH=$HOME/.local/bin:$PATH
+. swmod.sh init
+
+### setup scientific software
+# setup ROOT
+DIST=linux-ubuntu-16.04-x86_64
+ROOT_VER=6.04
+. swmod.sh load root@${ROOT_VER} &>/dev/null
+. $HOME/.local/sw/root/${DIST}/${ROOT_VER}/bin/thisroot.sh
+###
+
+# setup CLHEP
+CLHEP_VER=2.3
+. swmod.sh load clhep@${CLHEP_VER} &>/dev/null
+###
+
+# setup GEANT4
+GEANT4_VER=10.2
+. swmod.sh load geant4@${GEANT4_VER} &>/dev/null
+. $HOME/.local/sw/geant4/${DIST}/${GEANT4_VER}/share/Geant4-10.2.1/geant4make/geant4make.sh
+#. $HOME/.local/sw/geant4/${DIST}/${GEANT4_VER}/share/Geant4-10.1.1/geant4make/geant4make.sh
+###
+
+# setup Gate
+GATE_VER=7.2
+. swmod.sh load gate@${GATE_VER} &>/dev/null
+###
+##########
+
+# export TeXLive
+export PATH=$HOME/.local/texlive/bin/x86_64-linux:$PATH
+
+# Add iraf setup commands
+if [ -e /home/bd/.iraf/setup.sh ]; then
+  source /home/bd/.iraf/setup.sh
+fi
+
+# some aliases
+alias root='root -l'
+alias sim='cd $HOME/akdeniz/workdir/simple-czt/'
+alias xgterm='xfce4-terminal'
+alias lsd='ls -d .*'
+
+# colorize less
+export LESS='-R'
+export LESSOPEN='|~/.lessfilter %s'
