@@ -46,18 +46,17 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-colorscheme koehler
 set guifont=Monospace\ 10
 
 set conceallevel=0
 let g:tex_conceal='adgms'
 
-set guioptions-=T        " add the toolbar
+set guioptions-=T        " no gui toolbar. change to +=T to add it back
 set history=1000         " remember more commands and search history
 set undolevels=1000      " use many levels of undo
 set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
-set novisualbell
+set novisualbell         " no annoying visual bell
 set noerrorbells         " don't beep
 
 hi Cursor cterm=bold ctermbg=yellow ctermfg=darkred guifg=darkred guibg=yellow gui=bold
@@ -66,7 +65,7 @@ set nocursorline
 set nocursorcolumn
 set wrap                        " Do wrap long lines
 set autoindent                  " Indent at the same level of the previous line
-set shiftwidth=2                " Use indents of 4 spaces
+set shiftwidth=2                " Use indents of 2 spaces
 set expandtab                   " Tabs are spaces, not tabs
 set tabstop=2                   " An indentation every four columns
 set softtabstop=2               " Let backspace delete indent
@@ -86,10 +85,11 @@ au BufNewFile,BufReadPost,FilterReadPost,FileReadPost  .*{b,u}*rc set syntax=sh
 set lines=40 columns=90
 set cindent
 set cinoptions=(0,u0,U0
+
 " get efficient shortcut mappings
 nnoremap ; :
 
-" use tab for auto indenting whole file
+" use tab to auto indent whole file
 map <Tab> gg=G``
 
 " easier window navigation
@@ -106,8 +106,7 @@ let g:NERDTreeMapActivateNode="<F3>"
 let g:NERDTreeMapPreview="<F4>"
 "}
 
-
-" ignore annoying errors toggle in c++ files
+" ignore annoying error toggles in c++ files
 let g:syntastic_mode_map = { 'passive_filetypes': ['cpp'] }
 
 " set statusline {
