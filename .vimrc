@@ -127,6 +127,8 @@ let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1 
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+" don't count trailing whitespace since it lags in huge files
+let g:airline#extensions#whitespace#enabled = 0
 set t_Co=256
 
 if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
