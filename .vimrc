@@ -17,7 +17,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'majutsushi/tagbar'
-Plugin 'Lokaltog/vim-powerline'
+"Plugin 'Lokaltog/vim-powerline'
 Plugin 'powerline/fonts'
 Plugin 'bling/vim-bufferline'
 Plugin 'tpope/vim-surround'
@@ -111,13 +111,6 @@ let g:NERDTreeMapPreview="<F4>"
 let g:syntastic_mode_map = { 'passive_filetypes': ['cpp'] }
 
 " set statusline {
-let g:airline_powerline_fonts=1
-let g:airline#extensions#tabline#enabled = 1 
-let g:airline#extensions#tabline#left_sep = ' '
-let g:airline#extensions#tabline#left_alt_sep = '|'
-let g:Powerline_symbols = 'fancy'
-set t_Co=256
-
 if has('statusline')
   set laststatus=2
 
@@ -131,6 +124,12 @@ if has('statusline')
 endif
 
 " vim-airline {
+let g:airline_powerline_fonts=1
+let g:airline#extensions#tabline#enabled = 1 
+let g:airline#extensions#tabline#left_sep = ' '
+let g:airline#extensions#tabline#left_alt_sep = '|'
+set t_Co=256
+
 if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
   if !exists('g:airline_theme')
     let g:airline_theme = 'molokai' "'solarized'
@@ -141,6 +140,28 @@ if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
     let g:airline_right_sep='‹' " Slightly fancier than '<'
   endif
 endif
+ if !exists('g:airline_symbols')
+    let g:airline_symbols = {}
+  endif
+
+  " unicode symbols
+  let g:airline_left_sep = '»'
+  let g:airline_left_sep = '▶'
+  let g:airline_right_sep = '«'
+  let g:airline_right_sep = '◀'
+  let g:airline_symbols.crypt = '🔒'
+  let g:airline_symbols.linenr = '␊'
+  let g:airline_symbols.linenr = '␤'
+  let g:airline_symbols.linenr = '¶'
+  let g:airline_symbols.maxlinenr = '☰'
+  let g:airline_symbols.maxlinenr = ''
+  let g:airline_symbols.branch = '⎇'
+  let g:airline_symbols.paste = 'ρ'
+  let g:airline_symbols.paste = 'Þ'
+  let g:airline_symbols.paste = '∥'
+  let g:airline_symbols.spell = 'Ꞩ'
+  let g:airline_symbols.notexists = '∄'
+  let g:airline_symbols.whitespace = 'Ξ'
 " }
 "} end statusline
 
