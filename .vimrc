@@ -76,6 +76,7 @@ set tw=80
 set foldenable
 set number                      " Show line number 
 set mouse=a
+set wildmode=longest,list       " Bashlike Tab completion
 
 au FileType c,cpp setlocal expandtab shiftwidth=2 softtabstop=2
 au BufNewFile,BufReadPost,FilterReadPost,FileReadPost  *.{C,cc,hh,sh} set nospell
