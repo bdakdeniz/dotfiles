@@ -29,6 +29,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'osyo-manga/vim-over'
 Plugin 'gregsexton/gitv'
+Plugin 'morhetz/gruvbox'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -138,22 +139,32 @@ if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
     let g:airline_right_sep='‹' " Slightly fancier than '<'
   endif
 endif
- if !exists('g:airline_symbols')
-    let g:airline_symbols = {}
-  endif
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
 
-  " unicode symbols
-  let g:airline_left_sep = '▶'
-  let g:airline_right_sep = '◀'
-  let g:airline_symbols.crypt = '🔒'
-  let g:airline_symbols.linenr = '¶'
-  let g:airline_symbols.maxlinenr = ''
-  let g:airline_symbols.branch = '⎇'
-  let g:airline_symbols.paste = 'ρ'
-  let g:airline_symbols.spell = 'Ꞩ'
-  let g:airline_symbols.notexists = '∄'
-  let g:airline_symbols.whitespace = 'Ξ'
+" unicode symbols
+let g:airline_left_sep = '▶'
+let g:airline_right_sep = '◀ '
+let g:airline_symbols.crypt = '🔒'
+let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.maxlinenr = ''
+let g:airline_symbols.branch = '⎇ '
+let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.spell = 'Ꞩ'
+let g:airline_symbols.notexists = '∄'
+let g:airline_symbols.whitespace = 'Ξ'
 " }
 "} end statusline
 
+" gruvbox setup
+" {
+set background=dark
+let g:gruvbox_hls_cursor = 'orange'
+let g:gruvbox_sign_column = 'bg1'
+let g:gruvbox_color_column = 'bg1'
+let g:gruvbox_contrast_dark = 'dark'
+let g:gruvbox_contrast_light = 'soft'
+let g:airline_theme = 'molokai'
 colorscheme molokai
+" }
