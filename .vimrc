@@ -27,6 +27,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'flazz/vim-colorschemes'
 Plugin 'scrooloose/nerdcommenter'
+Plugin 'osyo-manga/vim-over'
+Plugin 'gregsexton/gitv'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
