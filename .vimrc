@@ -56,25 +56,22 @@ set wildignore=*.swp,*.bak,*.pyc,*.class
 set title                " change the terminal's title
 set novisualbell         " no annoying visual bell
 set noerrorbells         " don't beep
-
-hi Cursor cterm=bold ctermbg=yellow ctermfg=darkred guifg=darkred guibg=yellow gui=bold
-
 set nocursorline
 set nocursorcolumn
-set wrap                        " Do wrap long lines
-set autoindent                  " Indent at the same level of the previous line
-set shiftwidth=2                " Use indents of 2 spaces
-set expandtab                   " Tabs are spaces, not tabs
-set tabstop=2                   " An indentation every four columns
-set softtabstop=2               " Let backspace delete indent
-set nojoinspaces                " Prevents inserting two spaces after punctuation on a join (J)
-set splitright                  " Puts new vsplit windows to the right of the current
-set splitbelow                  " Puts new split windows to the bottom of the current
+set wrap                 " Do wrap long lines
+set autoindent           " Indent at the same level of the previous line
+set shiftwidth=2         " Use indents of 2 spaces
+set expandtab            " Tabs are spaces, not tabs
+set tabstop=2            " An indentation every four columns
+set softtabstop=2        " Let backspace delete indent
+set nojoinspaces         " Prevents inserting two spaces after punctuation on a join
+set splitright           " Puts new vsplit windows to the right of the current
+set splitbelow           " Puts new split windows to the bottom of the current
 set tw=80
 set foldenable
-set number                      " Show line number 
+set number                 " Show line number 
 set mouse=a
-set wildmode=longest,list       " Bashlike Tab completion
+set wildmode=longest,list  " Bashlike Tab completion
 
 au FileType c,cpp setlocal expandtab shiftwidth=2 softtabstop=2
 au BufNewFile,BufReadPost,FilterReadPost,FileReadPost  *.{C,cc,hh,sh} set nospell
@@ -145,30 +142,17 @@ endif
   endif
 
   " unicode symbols
-  let g:airline_left_sep = '»'
   let g:airline_left_sep = '▶'
-  let g:airline_right_sep = '«'
   let g:airline_right_sep = '◀'
   let g:airline_symbols.crypt = '🔒'
-  let g:airline_symbols.linenr = '␊'
-  let g:airline_symbols.linenr = '␤'
   let g:airline_symbols.linenr = '¶'
-  let g:airline_symbols.maxlinenr = '☰'
   let g:airline_symbols.maxlinenr = ''
   let g:airline_symbols.branch = '⎇'
   let g:airline_symbols.paste = 'ρ'
-  let g:airline_symbols.paste = 'Þ'
-  let g:airline_symbols.paste = '∥'
   let g:airline_symbols.spell = 'Ꞩ'
   let g:airline_symbols.notexists = '∄'
   let g:airline_symbols.whitespace = 'Ξ'
 " }
 "} end statusline
-
-" set solarized
-"syntax enable
-"set background=dark
-"colorscheme solarized
-"let g:solarized_termcolors=256
 
 colorscheme molokai
