@@ -1,9 +1,18 @@
 # simple two line prompt
 export PS1="\n[\w]\n\u@\h $ "
 
-# use powerline prompt
-source $HOME/dotfiles/.shell_prompt.sh
+alias tmux='tmux -2'
+if [ "$TERM" != "screen" ]
+then
+if type tmux >/dev/null 2>&1
+then
+tmux att || tmux 
+fi
+fi
 
+# use powerline prompt
+#source $HOME/dotfiles/.shell_prompt.sh
+source $HOME/dotfiles/powerline.sh
 # export swmod stuff...
 export PATH=$HOME/.local/bin:$PATH
 . swmod.sh init
@@ -39,7 +48,7 @@ export PATH=$HOME/.local/texlive/bin/x86_64-linux:$PATH
 
 # Add iraf setup commands
 if [ -e /home/bd/.iraf/setup.sh ]; then
-  source /home/bd/.iraf/setup.sh
+source /home/bd/.iraf/setup.sh
 fi
 
 # some aliases
