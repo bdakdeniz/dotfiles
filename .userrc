@@ -1,6 +1,9 @@
 # simple two line prompt
 export PS1="\n[\w]\n\u@\h $ "
 
+# use powerline prompt
+source $HOME/dotfiles/.shell_prompt.sh
+
 # export swmod stuff...
 export PATH=$HOME/.local/bin:$PATH
 . swmod.sh init

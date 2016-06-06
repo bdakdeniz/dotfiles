@@ -30,6 +30,7 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'osyo-manga/vim-over'
 Plugin 'gregsexton/gitv'
 Plugin 'morhetz/gruvbox'
+Plugin 'edkolev/promptline.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -46,7 +47,7 @@ filetype plugin indent on    " required
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
-set guifont=Monospace\ 10
+set guifont=Fantasque\ Sans\ Mono\ 13
 
 set conceallevel=0
 let g:tex_conceal='adgms'
@@ -107,20 +108,8 @@ let g:NERDTreeMapPreview="<F4>"
 " ignore annoying error toggles in c++ files
 let g:syntastic_mode_map = { 'passive_filetypes': ['cpp'] }
 
-" set statusline {
-if has('statusline')
-  set laststatus=2
-
-  " Broken down into easily includeable segments
-  set statusline=%<%f\                     " Filename
-  set statusline+=%w%h%m%r                 " Options
-  set statusline+=%{fugitive#statusline()} " Git Hotness
-  set statusline+=\ [%{&ff}/%Y]            " Filetype
-  set statusline+=\ [%{getcwd()}]          " Current dir
-  set statusline+=%=%-14.(%l,%c%V%)\ %p%%  " Right aligned file nav info
-endif
-
 " vim-airline {
+set laststatus=2
 let g:airline_powerline_fonts=1
 let g:airline#extensions#tabline#enabled = 1 
 let g:airline#extensions#tabline#left_sep = ' '
@@ -130,9 +119,6 @@ let g:airline#extensions#whitespace#enabled = 0
 set t_Co=256
 
 if isdirectory(expand("~/.vim/bundle/vim-airline-themes/"))
-  if !exists('g:airline_theme')
-    let g:airline_theme = 'molokai' "'solarized'
-  endif
   if !exists('g:airline_powerline_fonts')
     " Use the default set of separators with a few customizations
     let g:airline_left_sep='›'  " Slightly fancier than '>'
@@ -144,13 +130,11 @@ if !exists('g:airline_symbols')
 endif
 
 " unicode symbols
-let g:airline_left_sep = '▶'
-let g:airline_right_sep = '◀ '
 let g:airline_symbols.crypt = '🔒'
-let g:airline_symbols.linenr = '¶'
+let g:airline_symbols.linenr = '⎨⎬'  "'¶'
 let g:airline_symbols.maxlinenr = ''
-let g:airline_symbols.branch = '⎇ '
-let g:airline_symbols.paste = 'ρ'
+let g:airline_symbols.branch = '⎨⎇ '
+let g:airline_symbols.paste = ' ƿ' "'ρ'
 let g:airline_symbols.spell = 'Ꞩ'
 let g:airline_symbols.notexists = '∄'
 let g:airline_symbols.whitespace = 'Ξ'
