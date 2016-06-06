@@ -66,7 +66,7 @@ function __promptline_vcs_branch {
   return 1
 }
 function __promptline_cwd {
-  local dir_limit="2"
+  local dir_limit="4"
   local truncation="⋯"
   local first_char
   local part_count=0
@@ -159,8 +159,6 @@ function __promptline {
   local rsep=""
   local alt_sep=""
   local alt_rsep=""
-  local reset="${wrap}0${end_wrap}"
-  local reset_bg="${wrap}49${end_wrap}"
   local a_fg="${wrap}38;5;220${end_wrap}"
   local a_bg="${wrap}48;5;166${end_wrap}"
   local a_sep_fg="${wrap}38;5;166${end_wrap}"
@@ -176,6 +174,8 @@ function __promptline {
   local y_fg="${wrap}38;5;250${end_wrap}"
   local y_bg="${wrap}48;5;236${end_wrap}"
   local y_sep_fg="${wrap}38;5;236${end_wrap}"
+  local reset_bg="${wrap}49${end_wrap}"
+  local reset="${wrap}0${end_wrap}${space}${a_fg}\n [\D{⏰  %T | %D}]≻ ${c_fg}"
   if [[ -n ${ZSH_VERSION-} ]]; then
     PROMPT="$(__promptline_left_prompt)"
     RPROMPT="$(__promptline_right_prompt)"
