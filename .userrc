@@ -49,8 +49,11 @@ fi
 # some aliases
 alias root='root -l'
 alias sim='cd $HOME/akdeniz/workdir/simple-czt/'
+alias gunes='cd $HOME/akdeniz/gunes/'
 alias xgterm='xfce4-terminal'
 alias lsd='ls -d .*'
+alias rm='rm -i'
+alias gitg='git gui'
 
 # colorize less
 export LESS='-R'
