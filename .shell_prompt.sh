@@ -166,8 +166,7 @@ function __promptline {
 function __print_pre_prompt
 {
     local time=`date +%H:%M`
-    local load=`uptime|awk '{print $10,$11,$12}'`
-    printf "\e[37;36m%$(($COLUMNS))s" "[⌚ ${time}] [${load}]"
+    printf "\e[36m%$(($COLUMNS))s" "[⌚ ${time}]"
 }
 
 

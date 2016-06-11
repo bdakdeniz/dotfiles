@@ -31,6 +31,7 @@ Plugin 'osyo-manga/vim-over'
 Plugin 'gregsexton/gitv'
 Plugin 'morhetz/gruvbox'
 Plugin 'edkolev/promptline.vim'
+Plugin 'awk.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -75,6 +76,7 @@ set foldenable
 set number                 " Show line number 
 set mouse=a
 set wildmode=longest,list  " Bashlike Tab completion
+set foldmethod=syntax
 
 au FileType c,cpp setlocal expandtab shiftwidth=2 softtabstop=2
 au BufNewFile,BufReadPost,FilterReadPost,FileReadPost  *.{C,cc,hh,sh} set nospell
